@@ -11,6 +11,8 @@
     <modules>
         <module>../taobao-web</module>
         <module>../taobao-service</module>
+        <module>../taobao-dao</module>
+        <module>../taobao-util</module>
     </modules>
 
 
