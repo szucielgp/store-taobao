@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kingdee.youshang.baoxiao.mapper.PersonMapper">
+    <resultMap id="BaseResultMap" type="com.kingdee.youshang.baoxiao.po.Person">
+        <id column="FDBID" property="dbid" jdbcType="VARCHAR" />
+        <id column="FOPENID" property="openId" jdbcType="VARCHAR" />
+        <result column="FNAME" property="name" jdbcType="VARCHAR" />
+        <result column="FAVATARURL" property="avatarUrl" jdbcType="VARCHAR" />
+        <result column="FRIGHTID" property="rightid" jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+        select
+            FDBID, FOPENID, FNAME, FAVATARURL
+        from t_person
+        where FDBID = #{dbid,jdbcType=VARCHAR}
+        and FOPENID = #{openId,jdbcType=VARCHAR}
+    </select>
+
+    <insert id="insert" parameterType="com.kingdee.youshang.baoxiao.po.Person" >
+        insert into t_person (FDBID, FOPENID, FNAME,
+          FAVATARURL)
+        values (#{dbid,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+          #{avatarUrl,jdbcType=VARCHAR})
+    </insert>
+
+</mapper>
