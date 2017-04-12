@@ -17,13 +17,14 @@
 
     <properties>
         <mysql.version>5.1.32</mysql.version>
-        <junit.version>4.10</junit.version>
+        <junit.version>4.12</junit.version>
         <mybatis.version>3.2.8</mybatis.version>
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
         <spring.version>4.3.7.RELEASE</spring.version>
         <druid.version>1.0.14</druid.version>
         <servlet-api.version>2.5</servlet-api.version>
         <jsp-api.version>2.0</jsp-api.version>
+        <jackson.version>2.7.3</jackson.version>
     </properties>
 
     <dependencyManagement>
@@ -119,6 +120,31 @@
                 <artifactId>jsp-api</artifactId>
                 <version>${jsp-api.version}</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <!--jsckson处理-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>1.9.2</version>
             </dependency>
         </dependencies>
 
